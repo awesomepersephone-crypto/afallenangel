@@ -1,0 +1,47 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100dvh;
+    margin: 0;
+
+    background-image: url("marciline_full_body_website_background_3_1500x1091.png");
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+}
+
+.website-border {
+    display: block;
+    margin: 0 auto;
+}
+
+.gridcontainer {
+    display: grid;
+
+    grid-template-columns: repeat(4, 200px);
+    grid-template-rows: repeat(5, 200px);
+
+    gap: 20px;
+    padding: 20px;
+
+    grid-template-areas:
+        "item-1 item-1 item-1 item-2"
+        "item-3 item-3 item-3 item-2"
+        "item-4 item-4 item-5 item-5"
+        "item-6 item-7 item-8 item-8"
+        "item-9 item-9 item-9 item-9";
+
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.item {
+    padding: 0%;
+    background-color: #f4c1e9;
+    color: #000000;
+    text-align: center;
+    border-radius: 0px;
+    font-size: 20px;
+}
