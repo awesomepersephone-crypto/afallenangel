@@ -12,24 +12,29 @@ items.forEach(function(item) {
 
         const rect = item.getBoundingClientRect();
 
-        offsetX = event.clientX - rect.left;
-        offsetY = event.clientY - rect.top;
+        // Account for the page's scroll position
+        offsetX = event.pageX - (rect.left + window.scrollX);
+        offsetY = event.pageY - (rect.top + window.scrollY);
 
         // Remember the box's current size
         item.style.width = rect.width + "px";
         item.style.height = rect.height + "px";
 
-        // Take the box out of the grid while dragging
-        item.style.position = "fixed";
+        // Keep the box attached to the PAGE, not the screen
+        item.style.position = "absolute";
         item.style.zIndex = "1000";
+
+        // Prevent selecting text while dragging
+        event.preventDefault();
     });
 
     document.addEventListener("mousemove", function(event) {
 
         if (!dragging) return;
 
-        item.style.left = (event.clientX - offsetX) + "px";
-        item.style.top = (event.clientY - offsetY) + "px";
+        // pageX/pageY include scrolling
+        item.style.left = (event.pageX - offsetX) + "px";
+        item.style.top = (event.pageY - offsetY) + "px";
 
     });
 
