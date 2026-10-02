@@ -12,6 +12,46 @@ body {
     background-repeat: no-repeat;
 }
 
+.marquee {
+    width: 100%;
+    height: 70px;
+    overflow: hidden;
+    background-color: rgb(255, 192, 241);
+    white-space: nowrap;
+}
+
+.marquee-track {
+    display: flex;
+    width: max-content;
+    animation: scroll-loop 30s linear infinite;
+}
+
+.marquee-track h1 {
+    margin: 0;
+    padding: 5px 30px;
+    font-size: 32px;
+    white-space: nowrap;
+    background-color: rgb(255, 192, 241);
+}
+
+@keyframes scroll-loop {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.top-text {
+    font-size: 32px;
+    font-weight: bold;
+    white-space: nowrap;
+    display: inline-block;
+    padding-left: 20px;
+    padding-right: 20px;
+}
 .navbar {
     display: flex;
     justify-content: center;
@@ -71,6 +111,7 @@ body {
     margin: 0 auto;
 }
 .item {
+     position: absolute;
     padding: 50px 30px 30px 30px;
     box-sizing: border-box;
 
@@ -120,6 +161,10 @@ body {
     position: relative;
     width: 100%;
     height: 100%;
+}
+
+.draggable:active {
+    cursor: grabbing;
 }
 
 .draggable:active {
