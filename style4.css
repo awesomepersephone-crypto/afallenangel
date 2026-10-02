@@ -91,6 +91,10 @@ body {
     cursor: grabbing;
 }
 
+.draggable:active {
+    cursor: grabbing;
+}
+
 
 .item {
     padding: 20px;
