@@ -181,3 +181,24 @@ body {
         opacity: 1;
     }
 }
+img {
+  display: block;
+  margin: auto;
+  width: 50%;
+}
+.item video {
+    width: 75%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+#item4 {
+    text-align: center;
+}
+
+#item4 video {
+    display: block;
+    width: 70%;
+    height: auto;
+    margin: 15px auto;
+}
